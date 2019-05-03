@@ -12,4 +12,14 @@ router.get('/', (req, res) => {
     })
 });
 
+router.post('/', (req, res) => {
+  db.post(req.body)
+    .then(id => {
+      res.status(201).json(id);
+    })
+    .catch(err => {
+      res.status(500).json({ error: "Could not create the action." })
+    })
+});
+
 module.exports = router;
