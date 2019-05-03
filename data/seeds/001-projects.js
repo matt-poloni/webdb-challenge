@@ -6,31 +6,31 @@ exports.seed = function(knex, Promise) {
         {
           id: 1,
           name: 'webdb-i-challenge',
-          description: '',
+          description: null,
           completed: true,
         },
         {
           id: 2,
           name: 'webdb-ii-challenge',
-          description: '',
+          description: null,
           completed: true,
         },
         {
           id: 3,
           name: 'webdb-iii-challenge',
-          description: '',
+          description: null,
           completed: true,
         },
         {
           id: 4,
           name: 'webdb-iv-challenge',
-          description: '',
+          description: null,
           completed: true,
         },
         {
           id: 5,
           name: 'webdb-challenge',
-          description: '',
+          description: null,
           completed: false,
         },
       ]);

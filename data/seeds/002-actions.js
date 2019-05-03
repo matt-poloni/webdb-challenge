@@ -1,8 +1,8 @@
 
 exports.seed = function(knex, Promise) {
-  return knex('projects').truncate()
+  return knex('actions').truncate()
     .then(function () {
-      return knex('projects').insert([
+      return knex('actions').insert([
         {
           id: 1,
           description: 'Create a forked copy',
