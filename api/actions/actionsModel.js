@@ -14,8 +14,13 @@ async function getByID(id) {
   const action = await db(tbl)
     .where({id})
     .first();
+  const contexts = await db('action_contexts as ac')
+    .select('c.id', 'c.name')
+    .where({ action_id: id })
+    .leftJoin('contexts as c', 'ac.context_id', 'c.id')
   return {
     ...action,
     completed: !!action.completed,
+    contexts
   }
 }
