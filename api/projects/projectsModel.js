@@ -1,10 +1,13 @@
 const tbl = 'projects';
 const basic = require('../basicModel')(tbl);
+const db = require('../../data/dbConfig');
 
 module.exports = {
   get: basic.get,
   post: basic.post,
   getByID,
+  put: basic.put,
+  del: basic.del,
 }
 
 async function getByID(id) {
@@ -16,6 +19,10 @@ async function getByID(id) {
     .where({ project_id: id });
   return {
     ...project,
-    actions
+    completed: !!project.completed,
+    actions: actions.map(action => ({
+      ...action,
+      completed: !!action.completed
+    }))
   }
 }
